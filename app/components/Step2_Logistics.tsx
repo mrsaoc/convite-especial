@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { CarProfile } from '@phosphor-icons/react';
 
 export default function Step2_Logistics({ nextStep, setPreferences, preferences }: any) {
@@ -28,20 +28,20 @@ export default function Step2_Logistics({ nextStep, setPreferences, preferences 
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } }
+    visible: { opacity: 1, y: 0, transition: { type: "spring" as const, stiffness: 100, damping: 20 } }
   };
 
   // Animações dos elementos sólidos
   const carAnimation = animating === 'Vou te buscar' 
-    ? { x: [0, -15, 280], opacity: [1, 1, 0], transition: { duration: 1.2, times: [0, 0.3, 1], ease: "anticipate" } }
+    ? { x: [0, -15, 280], opacity: [1, 1, 0], transition: { duration: 1.2, times: [0, 0.3, 1], ease: "anticipate" as const } }
     : { x: 0, opacity: 1 };
 
   const dotLeftAnimation = animating === 'Nos encontramos lá' 
-    ? { x: [0, 40], scale: [1, 1.4], transition: { duration: 0.8, ease: "backOut" } } 
+    ? { x: [0, 40], scale: [1, 1.4], transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } } 
     : { x: 0, scale: 1 };
     
   const dotRightAnimation = animating === 'Nos encontramos lá' 
-    ? { x: [0, -40], scale: [1, 1.4], transition: { duration: 0.8, ease: "backOut" } } 
+    ? { x: [0, -40], scale: [1, 1.4], transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } } 
     : { x: 0, scale: 1 };
     
   const impactPulse = animating === 'Nos encontramos lá' 

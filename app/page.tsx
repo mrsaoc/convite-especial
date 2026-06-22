@@ -4,11 +4,11 @@ import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowLeft } from '@phosphor-icons/react';
 
-import Step0_Invitation from '@/components/Step0_Invitation';
-import Step1_Time from '@/components/Step1_Time';
-import Step2_Logistics from '@/components/Step2_Logistics';
-import Step3_Destination from '@/components/Step3_Destination';
-import Step4_Confirmation from '@/components/Step4_Confirmation';
+import Step0_Invitation from './components/Step0_Invitation';
+import Step1_Time from './components/Step1_Time';
+import Step2_Logistics from './components/Step2_Logistics';
+import Step3_Destination from './components/Step3_Destination';
+import Step4_Confirmation from './components/Step4_Confirmation';
 
 export default function InvitePage() {
   const [mounted, setMounted] = useState(false);

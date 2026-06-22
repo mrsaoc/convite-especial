@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, type Variants } from 'framer-motion';
 
 export default function Step1_Time({ nextStep, setPreferences, preferences }: any) {
   const [selected, setSelected] = useState<string | null>(null);
@@ -22,9 +22,13 @@ export default function Step1_Time({ nextStep, setPreferences, preferences }: an
     exit: { opacity: 0, y: -20, filter: "blur(10px)", transition: { duration: 0.5 } }
   };
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } }
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring" as const, stiffness: 100, damping: 20 }
+    }
   };
 
   // SVGs totalmente sólidos (fill) e arredondados, sem outline

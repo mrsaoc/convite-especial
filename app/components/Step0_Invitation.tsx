@@ -11,7 +11,7 @@ export default function Step0_Invitation({ nextStep }: any) {
       opacity: 1, 
       y: 0, 
       scale: 1,
-      transition: { duration: 1.2, type: "spring", stiffness: 80, damping: 20 } 
+      transition: { duration: 1.2, type: "spring" as const, stiffness: 80, damping: 20 } 
     }
   };
 
