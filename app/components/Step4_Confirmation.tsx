@@ -6,7 +6,7 @@ import { Clock, MapPin, CarProfile, WhatsappLogo, Heart } from '@phosphor-icons/
 
 export default function Step4_Confirmation({ preferences }: any) {
   const handleWhatsApp = () => {
-    const text = `Tudo desenhado para amanhã! ✨\n\n📍 *Local:* Quebra-Mar de Santos\n🕒 *Horário:* ${preferences.time || 'A definir'}\n🚗 *Logística:* ${preferences.transport || 'A definir'}\n\nMal posso esperar.`;
+    const text = `\n\n *local:* Quebra-Mar de Santos\n *Horário:* ${preferences.time || 'A definir'}\n *como vamos:* ${preferences.transport || 'A definir'}\n\nlinda`;
     const encodedText = encodeURIComponent(text);
     window.open(`https://wa.me/5513996988700?text=${encodedText}`, '_blank');
   };
